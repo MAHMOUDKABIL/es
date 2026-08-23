@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTERSOFT | منصة رواد الأعمال المتكاملة</title>
+    <meta name="description" content="منصة متكاملة لدعم رواد الأعمال: مكاتب افتراضية، تأسيس شركات، وإدارة ضريبية بأقل تكلفة.">
+    
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- الأنماط -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <!-- سيتم تبديل هذا المصدر تلقائياً حسب الوضع الليلي عبر core.js -->
+                <img src="assets/logo-light.svg" alt="ENTERSOFT">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="packages.html">الباقات</a></li>
+                <li><a href="builder.html">صمم باقتك</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" title="تبديل الوضع">🌙</button>
+                <button id="cart-btn" class="btn-outline">
+                    السلة (<span id="cart-count">0</span>)
+                </button>
+                
+                <button id="login-btn" class="btn-primary" onclick="loginWithGoogle()">تسجيل الدخول</button>
+                
+                <div id="user-menu" class="hidden" style="display: flex; align-items: center; gap: 10px;">
+                    <span id="user-name" style="font-weight: 600; font-size: 0.9rem;"></span>
+                    <button onclick="logout()" class="btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">خروج</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم البطل (Hero) -->
+    <header class="section-padding" style="min-height: 80vh; display: flex; align-items: center;">
+        <div class="container text-center">
+            <h1 class="fade-in-up" style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem;">
+                ابدأ فكرتك الناشئة <br>
+                <span style="color: var(--text-secondary);">بأقل تكلفة وأعلى احترافية</span>
+            </h1>
+            <p class="fade-in-up delay-100" style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem;">
+                من استخراج السجل التجاري والمكتب الافتراضي، إلى الإدارة الضريبية والبرمجة. كل ما تحتاجه في منصة واحدة موثوقة.
+            </p>
+            <div class="fade-in-up delay-200" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="builder.html" class="btn btn-primary btn-pulse">صمم باقتك الآن</a>
+                <a href="https://wa.me/201159866998" target="_blank" class="btn btn-outline">تحدث معنا عبر واتساب</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم تعريفي سريع -->
+    <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="text-center fade-in-up" style="margin-bottom: 3rem; font-size: 2rem;">لماذا تختار ENTERSOFT؟</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="card fade-in-up delay-100 hover-lift">
+                    <h3 style="margin-bottom: 1rem;">توفير يصل إلى 90%</h3>
+                    <p style="color: var(--text-secondary);">قارن بين تكلفة المكتب التقليدي ومرتب السكرتير وبين باقاتنا المرنة.</p>
+                </div>
+                <div class="card fade-in-up delay-200 hover-lift">
+                    <h3 style="margin-bottom: 1rem;">إجراءات قانونية موثقة</h3>
+                    <p style="color: var(--text-secondary);">عقود إيجار معتمدة وموثقة تصلح للتأسيس أمام مأمورية الضرائب والتأمينات.</p>
+                </div>
+                <div class="card fade-in-up delay-300 hover-lift">
+                    <h3 style="margin-bottom: 1rem;">دعم فني وإداري مستمر</h3>
+                    <p style="color: var(--text-secondary);">فريق من المحامين والمحاسبين والمبرمجين جاهز لخدمتك على مدار الساعة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة إكمال الملف الشخصي -->
+    <div id="profile-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('profile-modal')">&times;</button>
+            <h2 style="margin-bottom: 0.5rem;">خطوة أخيرة لتكتمل رحلتك</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">نحتاج إلى بعض التفاصيل البسيطة لنتمكن من خدمتك بشكل أفضل.</p>
+            
+            <form onsubmit="saveProfile(event)">
+                <div class="form-group">
+                    <label class="form-label">الاسم الثلاثي</label>
+                    <input type="text" id="modal-fullName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">رقم الهاتف (واتساب)</label>
+                    <input type="tel" id="modal-phone" class="form-input" required placeholder="01xxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">المهنة أو الوظيفة الحالية</label>
+                    <input type="text" id="modal-jobTitle" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">حفظ ومتابعة</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- نافذة سلة المشتريات -->
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('cart-modal')">&times;</button>
+            <h2 style="margin-bottom: 1.5rem;">سلة المشتريات</h2>
+            
+            <div id="cart-items-container" style="max-height: 300px; overflow-y: auto; margin-bottom: 1.5rem;">
+                <!-- يتم ملؤها ديناميكياً عبر core.js -->
+            </div>
+            
+            <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;">
+                    <span>الإجمالي:</span>
+                    <span><span id="cart-total-amount">0</span> ج.م</span>
+                </div>
+                <button onclick="checkout()" class="btn btn-primary" style="width: 100%;">تأكيد الطلب</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- المحرك المركزي (يجب أن يكون type="module" ليعمل استيراد Firebase) -->
+    <script type="module" src="js/core.js"></script>
+</body>
+</html>

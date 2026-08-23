@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الإدارة | ENTERSOFT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        /* تنسيقات خاصة بلوحة التحكم */
+        .admin-layout { display: flex; min-height: 100vh; }
+        .admin-sidebar { width: 250px; background: var(--bg-secondary); border-left: 1px solid var(--border); padding: 2rem 1rem; position: fixed; height: 100vh; overflow-y: auto; }
+        .admin-main { flex: 1; margin-right: 250px; padding: 2rem; }
+        .admin-nav-item { display: block; padding: 0.75rem 1rem; border-radius: var(--radius); color: var(--text-secondary); font-weight: 600; margin-bottom: 0.5rem; cursor: pointer; transition: var(--transition); }
+        .admin-nav-item:hover, .admin-nav-item.active { background: var(--accent); color: var(--bg-primary); }
+        .stat-card { background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--accent); }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+        .data-table th, .data-table td { padding: 1rem; text-align: right; border-bottom: 1px solid var(--border); }
+        .data-table th { background: var(--bg-secondary); font-weight: 700; }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .status-pending { background: #FEF3C7; color: #92400E; }
+        .status-completed { background: #D1FAE5; color: #065F46; }
+        @media (max-width: 768px) {
+            .admin-sidebar { width: 100%; height: auto; position: relative; display: flex; overflow-x: auto; padding: 1rem; }
+            .admin-main { margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شاشة تسجيل الدخول (تظهر إذا لم يكن المستخدم مسجلاً أو ليس أدمن) -->
+    <div id="login-screen" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+        <div class="card" style="width: 100%; max-width: 400px; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">دخول الإدارة</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">هذه المنطقة مخصصة لمديري النظام فقط.</p>
+            <button class="btn btn-primary full-width" onclick="loginAdmin()">تسجيل الدخول بحساب جوجل (Admin)</button>
+        </div>
+    </div>
+
+    <!-- لوحة التحكم الرئيسية (مخفية حتى يتم التحقق من الصلاحيات) -->
+    <div id="admin-dashboard" class="admin-layout hidden">
+        <aside class="admin-sidebar">
+            <h3 style="margin-bottom: 2rem; color: var(--accent);">ENTERSOFT Admin</h3>
+            <div class="admin-nav-item active" onclick="showTab('dashboard')">📊 لوحة المعلومات</div>
+            <div class="admin-nav-item" onclick="showTab('orders')">🛒 الطلبات</div>
+            <div class="admin-nav-item" onclick="showTab('users')"> 👥 المستخدمين</div>
+            <div class="admin-nav-item" onclick="showTab('tracking')"> 📈 التتبع والتحليلات</div>
+            <div class="admin-nav-item" onclick="logout()" style="margin-top: 2rem; color: #EF4444;">🚪 تسجيل الخروج</div>
+        </aside>
+
+        <main class="admin-main">
+            <!-- تبويب لوحة المعلومات -->
+            <section id="tab-dashboard" class="tab-content">
+                <h1 style="margin-bottom: 2rem;">نظرة عامة</h1>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div class="stat-card">
+                        <p style="color: var(--text-secondary);">إجمالي الطلبات</p>
+                        <div class="stat-value" id="stat-orders">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <p style="color: var(--text-secondary);">المستخدمين المسجلين</p>
+                        <div class="stat-value" id="stat-users">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <p style="color: var(--text-secondary);">إجمالي الإيرادات (تقديري)</p>
+                        <div class="stat-value" id="stat-revenue">0 ج.م</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- تبويب الطلبات -->
+            <section id="tab-orders" class="tab-content hidden">
+                <h1 style="margin-bottom: 1rem;">إدارة الطلبات</h1>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>العميل</th>
+                            <th>الخدمات</th>
+                            <th>الإجمالي</th>
+                            <th>الحالة</th>
+                            <th>التاريخ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body">
+                        <!-- يتم ملؤها ديناميكياً -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- تبويب المستخدمين -->
+            <section id="tab-users" class="tab-content hidden">
+                <h1 style="margin-bottom: 1rem;">قاعدة المستخدمين</h1>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>الاسم</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>الهاتف</th>
+                            <th>المهنة</th>
+                            <th>تاريخ التسجيل</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                        <!-- يتم ملؤها ديناميكياً -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- تبويب التتبع -->
+            <section id="tab-tracking" class="tab-content hidden">
+                <h1 style="margin-bottom: 1rem;">سجل التتبع والتحليلات</h1>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">آخر 50 نشاط للمستخدمين على المنصة.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>المستخدم</th>
+                            <th>الصفحة / الحدث</th>
+                            <th>التفاصيل</th>
+                            <th>الوقت</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tracking-table-body">
+                        <!-- يتم ملؤها ديناميكياً -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

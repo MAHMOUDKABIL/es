@@ -1,0 +1,80 @@
+/* شريط التقدم */
+.progress-bar-container {
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 3rem; flex-wrap: wrap; gap: 0.5rem;
+}
+.progress-step {
+    padding: 0.5rem 1rem; border-radius: 20px; background: var(--bg-secondary);
+    color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;
+    transition: var(--transition);
+}
+.progress-step.active { background: var(--accent); color: var(--bg-primary); }
+.progress-line { width: 40px; height: 2px; background: var(--border); }
+
+/* شبكة الباني */
+.builder-grid {
+    display: grid; grid-template-columns: 1fr; gap: 2rem;
+}
+@media (min-width: 992px) {
+    .builder-grid { grid-template-columns: 1fr 350px; }
+}
+
+/* خطوات النموذج */
+.form-step { display: none; }
+.form-step.active { display: block; animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+.step-title { margin-bottom: 1.5rem; font-size: 1.5rem; }
+.step-actions { display: flex; justify-content: space-between; margin-top: 2rem; gap: 1rem; }
+
+/* بطاقات الاختيار */
+.options-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 768px) { .options-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
+
+.option-card {
+    position: relative; cursor: pointer; display: block;
+}
+.option-card input { position: absolute; opacity: 0; }
+.option-content {
+    border: 2px solid var(--border); border-radius: var(--radius);
+    padding: 1.5rem; transition: var(--transition); background: var(--bg-primary);
+    height: 100%; display: flex; flex-direction: column;
+}
+.option-card input:checked + .option-content {
+    border-color: var(--accent); background: var(--bg-secondary);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+.option-content h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+.option-content p { color: var(--text-secondary); font-size: 0.9rem; flex-grow: 1; margin-bottom: 1rem; }
+.price-tag {
+    display: inline-block; background: var(--bg-secondary); color: var(--text-primary);
+    padding: 0.4rem 0.8rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem;
+    border: 1px solid var(--border);
+}
+.option-card input:checked + .option-content .price-tag {
+    background: var(--accent); color: var(--bg-primary); border-color: var(--accent);
+}
+
+/* تمييز الخيار الأكثر طلباً */
+.featured-option .option-content { border-color: var(--accent); position: relative; }
+.badge {
+    position: absolute; top: -10px; right: 20px; background: var(--accent);
+    color: var(--bg-primary); padding: 2px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 700;
+}
+
+/* الشريط الجانبي الثابت */
+.builder-summary { position: relative; }
+@media (min-width: 992px) {
+    .builder-summary { position: sticky; top: 100px; height: fit-content; }
+}
+.summary-card {
+    background: var(--bg-secondary); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+}
+.summary-item {
+    display: flex; justify-content: space-between; align-items: start;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+}
+.summary-item:last-child { border-bottom: none; }
+.summary-item-name { font-weight: 600; font-size: 0.95rem; }
+.summary-item-price { font-weight: 700; color: var(--accent); white-space: nowrap; margin-right: 1rem; }
