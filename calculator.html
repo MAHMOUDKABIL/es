@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أداة التوفير | ENTERSOFT — احسب كم ستوفر معنا</title>
+<meta name="description" content="أداة ذكية تحسب لك الفرق بين التكلفة التقليدية والتكلفة مع انترسوفت في ثوانٍ. اكتشف كم يمكنك توفيره سنوياً">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+<script>document.documentElement.classList.add('js');</script>
+<noscript><style>.reveal-blur{opacity:1!important;filter:none!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+
+<nav class="nav-fixed"><div class="nav-inner">
+  <a href="index.html" class="flex items-center gap-3">
+    <img src="https://fastupload.live/do.php?img=2993" alt="ENTERSOFT" class="logo-img" onerror="this.style.display='none'">
+    <span><span class="block font-bold text-lg">انترسوفت للحلول المتكاملة ودعم ريادة الاعمال </span><span class="text-xs text-neutral-500"> ش ذ م م</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">الرئيسية</a><a href="services.html" class="nav-link">الخدمات</a><a href="about.html" class="nav-link">من نحن</a><a href="calculator.html" class="nav-link active">أداة التوفير</a><a href="pricing.html" class="nav-link">الأسعار</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="contact.html" class="nav-link">اتصل بنا</a>
+  </div>
+  <div class="flex items-center gap-3">
+    <a href="contact.html" class="btn btn-gradient-emerald btn-md hidden sm:inline-flex">استشارة مجانية</a>
+    <button class="mobile-menu-btn" aria-label="القائمة">☰</button>
+  </div>
+</div></nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="flex items-center justify-between mb-8"><span class="font-bold text-lg">القائمة</span><button class="mobile-menu-close font-bold">✕</button></div>
+  <div class="flex flex-col gap-4">
+    <a href="index.html" class="nav-link">الرئيسية</a><a href="services.html" class="nav-link">الخدمات</a><a href="about.html" class="nav-link">من نحن</a><a href="calculator.html" class="nav-link active">أداة التوفير</a><a href="pricing.html" class="nav-link">الأسعار</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="contact.html" class="nav-link">اتصل بنا</a>
+    <a href="contact.html" class="btn btn-gradient-emerald btn-lg mt-4">استشارة مجانية</a>
+  </div>
+</div>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="grid-background absolute inset-0 animate-grid-move"></div>
+    <div class="bg-gradient-radial absolute inset-0"></div>
+  </div>
+  <div class="container relative z-10">
+    <div class="breadcrumb reveal-blur">
+      <a href="index.html">الرئيسية</a>
+      <span>/</span>
+      <span>أداة التوفير</span>
+    </div>
+    <img src="https://fastupload.live/do.php?img=2993" alt="ENTERSOFT" class="logo-img-lg mx-auto mb-6 reveal-blur" onerror="this.style.display='none'">
+    <h1 class="page-header-title reveal-blur transition-delay-100">احسب كم <span class="text-gradient-brown">ستوفر</span> معنا</h1>
+    <p class="page-header-subtitle reveal-blur transition-delay-200">أداة ذكية تحسب لك الفرق بين التكلفة التقليدية والتكلفة مع انترسوفت في ثوانٍ. اكتشف كم يمكنك توفيره سنوياً.</p>
+  </div>
+</section>
+
+<!-- Calculator Section -->
+<section class="py-16 px-6 lg:px-12">
+  <div class="container">
+    <div class="calculator-container reveal-blur">
+      <div class="text-center mb-8">
+        <span class="badge badge-emerald mb-4" style="display:inline-flex">أداة تفاعلية</span>
+        <h2 class="text-2xl font-bold mb-2">أدخل بيانات نشاطك</h2>
+        <p class="text-neutral-400 text-sm">سنحسب لك التوفير المتوقع بناءً على احتياجاتك</p>
+      </div>
+
+      <form id="calcForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium mb-2">نوع النشاط</label>
+          <select id="activityType" class="input-field">
+            <option value="commercial">تجاري</option>
+            <option value="industrial">صناعي</option>
+            <option value="service">خدمي</option>
+            <option value="touristic">سياحي</option>
+            <option value="medical">طبي</option>
+            <option value="educational">تعليمي</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">الشكل القانوني</label>
+          <select id="legalForm" class="input-field">
+            <option value="individual">منشأة فردية</option>
+            <option value="llc">شركة ذات مسئولية محدودة</option>
+            <option value="jsc">شركة مساهمة</option>
+            <option value="partnership">شركة توصية</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">عدد الموظفين</label>
+          <input type="number" id="employees" class="input-field" value="5" min="0" max="1000">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">الإيرادات الشهرية المتوقعة (جنيه)</label>
+          <input type="number" id="monthlyRevenue" class="input-field" value="100000" min="0">
+        </div>
+
+        <div style="grid-column:1/-1">
+          <label class="block text-sm font-medium mb-3">الخدمات المطلوبة</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="check-item" style="cursor:pointer">
+              <input type="checkbox" id="needOffice" checked class="accent-emerald" style="width:1.25rem;height:1.25rem">
+              <span>مقر / عنوان قانوني — عقد إيجار موثق</span>
+            </label>
+            <label class="check-item" style="cursor:pointer">
+              <input type="checkbox" id="needAccounting" checked class="accent-emerald" style="width:1.25rem;height:1.25rem">
+              <span>خدمات محاسبية — إمساك دفاتر وإقرارات</span>
+            </label>
+            <label class="check-item" style="cursor:pointer">
+              <input type="checkbox" id="needTax" checked class="accent-emerald" style="width:1.25rem;height:1.25rem">
+              <span>تمثيل ضريبي — حضور لجان الفحص</span>
+            </label>
+            <label class="check-item" style="cursor:pointer">
+              <input type="checkbox" id="needMarketing" class="accent-emerald" style="width:1.25rem;height:1.25rem">
+              <span>تسويق رقمي — حملات إعلانية</span>
+            </label>
+            <label class="check-item" style="cursor:pointer">
+              <input type="checkbox" id="needWebsite" class="accent-emerald" style="width:1.25rem;height:1.25rem">
+              <span>موقع إلكتروني — تطوير وصيانة</span>
+            </label>
+            <label class="check-item" style="cursor:pointer">
+              <input type="checkbox" id="needERP" class="accent-emerald" style="width:1.25rem;height:1.25rem">
+              <span>نظام ERP — إدارة موارد متكاملة</span>
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <div class="calculator-result">
+        <div class="text-sm text-neutral-400 mb-2">التوفير السنوي المتوقع</div>
+        <div id="calcResultNumber" class="calculator-result-number">0 جنيه</div>
+        <div id="calcResultDetails" style="margin-top:1.5rem"></div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+          <a href="contact.html" class="btn btn-gradient-emerald btn-lg">ابدأ التوفير الآن</a>
+          <a href="pricing.html" class="btn btn-secondary btn-lg">استعرض الباقات</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-24 px-6 lg:px-12 relative">
+  <div class="absolute inset-0 bg-gradient-radial pointer-events-none"></div>
+  <div class="container relative z-10">
+    <div class="section-header reveal-blur">
+      <div class="section-number">كيف نحسب؟</div>
+      <h2 class="section-title">منهجية <span class="text-gradient-brown">الحساب</span></h2>
+      <p class="section-subtitle">نستخدم بيانات حقيقية من السوق المصري لحساب الفرق بين التكلفة التقليدية والتكلفة مع انترسوفت</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="feature-card reveal-blur">
+        <div class="step-number">01</div>
+        <h3 class="feature-title">تحليل التكلفة التقليدية</h3>
+        <p class="feature-desc">نحسب تكلفة إيجار مكتب فعلي، رواتب موظفين إداريين، خدمات محاسبية خارجية، وتكاليف تشغيلية أخرى.</p>
+      </div>
+      <div class="feature-card reveal-blur transition-delay-100">
+        <div class="step-number">02</div>
+        <h3 class="feature-title">حساب تكلفة انترسوفت</h3>
+        <p class="feature-desc">نجمع تكلفة الباقة المختارة مع الخدمات الإضافية المطلوبة، مع تطبيق خصومات الحجم.</p>
+      </div>
+      <div class="feature-card reveal-blur transition-delay-200">
+        <div class="step-number">03</div>
+        <h3 class="feature-title">مقارنة وتوفير</h3>
+        <p class="feature-desc">نطرح التكلفة التقليدية من تكلفة انترسوفت لنحصل على صافي التوفير السنوي المتوقع.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Preview -->
+<section class="py-24 px-6 lg:px-12">
+  <div class="container">
+    <div class="section-header reveal-blur">
+      <div class="section-number">لماذا التوفير كبير؟</div>
+      <h2 class="section-title">الفرق <span class="text-gradient-brown">حقيقي</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="glass-card p-8 reveal-blur">
+        <div class="text-sm text-neutral-400 mb-2">الطريقة التقليدية</div>
+        <ul class="space-y-3">
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">إيجار مكتب فعلي</span>
+            <span class="font-bold" style="color:#f87171">15,000 ج/شهر</span>
+          </li>
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">محاسب خارجي</span>
+            <span class="font-bold" style="color:#f87171">5,000 ج/شهر</span>
+          </li>
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">موظف استقبال</span>
+            <span class="font-bold" style="color:#f87171">6,500 ج/شهر</span>
+          </li>
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">مصاريف تشغيلية</span>
+            <span class="font-bold" style="color:#f87171">7,000 ج/شهر</span>
+          </li>
+        </ul>
+        <div class="mt-6 pt-4 border text-center" style="border-color:var(--b1)">
+          <div class="text-sm text-neutral-400">الإجمالي السنوي</div>
+          <div class="text-2xl font-bold" style="color:#f87171">+402,000 جنيه</div>
+        </div>
+      </div>
+      <div class="glass-card p-8 reveal-blur transition-delay-100" style="border-color:rgba(176,137,104,.4)">
+        <div class="text-sm text-neutral-400 mb-2">مع انترسوفت</div>
+        <ul class="space-y-3">
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">عنوان قانوني افتراضي</span>
+            <span class="font-bold text-emerald">3,000 ج/شهر</span>
+          </li>
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">محاسب معتمد</span>
+            <span class="font-bold text-emerald">3,000 ج/شهر</span>
+          </li>
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">استقبال المعاينات</span>
+            <span class="font-bold text-emerald">مشمول</span>
+          </li>
+          <li class="flex justify-between p-3 rounded-lg bg-white/5">
+            <span class="text-neutral-400">مصاريف تشغيلية</span>
+            <span class="font-bold text-emerald">مشمول</span>
+          </li>
+        </ul>
+        <div class="mt-6 pt-4 border text-center" style="border-color:var(--b1)">
+          <div class="text-sm text-neutral-400">الإجمالي السنوي</div>
+          <div class="text-2xl font-bold text-emerald">~72,000 جنيه</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 reveal-blur">
+      <span class="badge badge-emerald" style="font-size:1rem;padding:.75rem 1.5rem">نسبة التوفير: حتى 83% سنوياً</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 px-6 lg:px-12">
+  <div class="container">
+    <div class="section-header reveal-blur">
+      <div class="section-number">أسئلة شائعة</div>
+      <h2 class="section-title">أسئلة عن <span class="text-gradient-brown">الأداة</span></h2>
+    </div>
+    <div class="max-w-3xl mx-auto">
+      <div class="faq-item reveal-blur">
+        <button class="faq-question">
+          <span>هل النتائج دقيقة 100%؟</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            النتائج تقديرية بناءً على متوسطات السوق المصري. التوفير الفعلي قد يختلف حسب تفاصيل نشاطك المحدد، لكننا نضمن توفير لا يقل عن 30% في معظم الحالات. احجز استشارة مجانية للحصول على دراسة حالة مفصلة.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal-blur transition-delay-100">
+        <button class="faq-question">
+          <span>ماذا لو تغيرت احتياجاتي لاحقاً؟</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            يمكنك ترقية أو تخفيض باقتك في أي وقت. نحن مرنون تماماً ونتكيف مع نمو أعمالك. لا توجد عقود طويلة الأمد تجبرك على البقاء.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal-blur transition-delay-200">
+        <button class="faq-question">
+          <span>هل هناك تكاليف خفية؟</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            لا، أسعارنا شفافة تماماً. ما تراه هو ما تدفعه. لا توجد رسوم إضافية أو مفاجآت. جميع التكاليف مذكورة بوضوح في الباقة المختارة.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal-blur transition-delay-300">
+        <button class="faq-question">
+          <span>متى أبدأ في التوفير؟</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            التوفير يبدأ من اليوم الأول. بدلاً من دفع مقدم إيجار كبير وتكاليف تأسيس باهظة، تبدأ بدفع شهري بسيط يشمل كل شيء.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 lg:px-12">
+  <div class="container">
+    <div class="glass-card p-12 text-center relative overflow-hidden reveal-blur">
+      <div class="absolute inset-0 bg-gradient-radial pointer-events-none"></div>
+      <div class="relative z-10">
+        <img src="https://fastupload.live/do.php?img=2993" alt="ENTERSOFT" class="logo-img-lg mx-auto mb-6" onerror="this.style.display='none'">
+        <h2 class="text-4xl font-bold mb-4">جاهز للبدء؟</h2>
+        <p class="text-xl text-neutral-400 mb-8 max-w-2xl mx-auto">احجز استشارة مجانية مع خبرائنا، وسنساعدك في اختيار الباقة المثالية لنشاطك.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="btn btn-gradient-emerald btn-xl">احجز استشارتك المجانية</a>
+          <a href="https://wa.me/201159844677" class="btn btn-secondary btn-xl">تواصل عبر واتساب</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="https://fastupload.live/do.php?img=2993" alt="ENTERSOFT" class="logo-img-lg mb-4" onerror="this.style.display='none'">
+      <p class="text-neutral-400 text-sm leading-relaxed">انترسوفت (ENTERSOFT) — بيئة العمل المثالية لنمو وتأسيس الشركات في مصر. نجمع لك كل ما تحتاجه للنجاح تحت سقف واحد، مع خدمة متميزة للمنطقة الاقتصادية لقناة السويس.</p>
+    </div>
+    <div>
+      <h4 class="footer-title">التنقل السريع</h4>
+      <ul class="footer-links">
+        <li><a href="index.html" class="footer-link">الرئيسية</a></li>
+        <li><a href="services.html" class="footer-link">الخدمات والحلول</a></li>
+        <li><a href="pricing.html" class="footer-link">خطط الأسعار</a></li>
+        <li><a href="faq.html" class="footer-link">مركز المساعدة</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-title">الخدمات الأساسية</h4>
+      <ul class="footer-links">
+        <li><a href="service-company-formation.html" class="footer-link">تأسيس الشركات قانونياً</a></li>
+        <li><a href="service-virtual-office.html" class="footer-link">المقرات الافتراضية</a></li>
+        <li><a href="service-tax-accounting.html" class="footer-link">الخدمات المحاسبية</a></li>
+        <li><a href="service-marketing.html" class="footer-link">التسويق الرقمي والبرمجة</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-title">المقر والتواصل</h4>
+      <div class="footer-contact-item"><b>العنوان:</b><span>107 شارع التحرير، أول الإسماعيلية</span></div>
+      <div class="footer-contact-item"><b>هاتف:</b><a href="tel:+201159844677" class="footer-link">+20 115 984 4677</a></div>
+      <div class="footer-contact-item"><b>هاتف:</b><a href="tel:+201159866998" class="footer-link">+20 115 986 6998</a></div>
+      <div class="footer-contact-item"><b>بريد:</b><a href="mailto:info@entersoft.tech" class="footer-link">info@entersoft.tech</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copyright">جميع الحقوق محفوظة © 2026 ENTERSOFT L.L.C.</div>
+    <div class="footer-socials">
+      <a href="#" class="footer-social">فيسبوك</a>
+      <a href="#" class="footer-social">انستجرام</a>
+      <a href="#" class="footer-social">لينكدإن</a>
+      <a href="#" class="footer-social">تويتر</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/201159844677" class="whatsapp-btn">واتساب</a>
+<button class="scroll-top-btn" aria-label="الأعلى">↑</button>
+
+<div class="cookie-banner">
+  <div class="cookie-content">
+    <p class="cookie-text">نستخدم ملفات تعريف الارتباط لتحسين تجربتك وقياس أداء الموقع. باستمرارك في التصفح فأنت توافق على سياسة الخصوصية.</p>
+    <div class="cookie-buttons">
+      <button class="btn btn-gradient-emerald btn-sm cookie-accept">موافق</button>
+      <button class="btn btn-secondary btn-sm cookie-decline">لاحقاً</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ===== Calculator Logic =====
+  function g(id){return document.getElementById(id);}
+
+  function calculate(){
+    var emp = parseInt(g('employees').value) || 0;
+    var trad = 0;
+    var ent = 0;
+
+    // Office
+    if(g('needOffice').checked){
+      trad += 15000 * 12;
+      ent  += 3000 * 12;
+    }
+
+    // Employees admin cost
+    trad += emp * 5000 * 12;
+    ent  += emp * 2000 * 12;
+
+    // Accounting
+    if(g('needAccounting').checked){
+      trad += 3000 * 12;
+      ent  += 3000 * 12;
+    }
+
+    // Tax representation
+    if(g('needTax').checked){
+      trad += 8000 * 12;
+      ent  += 2500 * 12;
+    }
+
+    // Marketing
+    if(g('needMarketing').checked){
+      trad += 15000 * 12;
+      ent  += 6000 * 12;
+    }
+
+    // Website (one-time)
+    if(g('needWebsite').checked){
+      trad += 25000;
+      ent  += 15000;
+    }
+
+    // ERP (one-time)
+    if(g('needERP').checked){
+      trad += 120000;
+      ent  += 65000;
+    }
+
+    // Setup fees
+    trad += 20000;
+    ent  += 10000;
+
+    var save = Math.max(trad - ent, 0);
+    var pct  = trad > 0 ? Math.round(save / trad * 100) : 0;
+
+    g('calcResultNumber').textContent = save.toLocaleString('en-US') + ' جنيه';
+    g('calcResultDetails').innerHTML =
+      '<div class="grid grid-cols-2 gap-4">' +
+        '<div class="p-4 rounded-xl bg-white/5">' +
+          '<div class="text-sm text-neutral-400 mb-1">الطريقة التقليدية</div>' +
+          '<div class="text-xl font-bold" style="color:#f87171">' + trad.toLocaleString('en-US') + ' جنيه</div>' +
+        '</div>' +
+        '<div class="p-4 rounded-xl bg-white/5">' +
+          '<div class="text-sm text-neutral-400 mb-1">مع انترسوفت</div>' +
+          '<div class="text-xl font-bold text-emerald">' + ent.toLocaleString('en-US') + ' جنيه</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="margin-top:1rem">' +
+        '<span class="badge badge-emerald" style="font-size:.95rem;padding:.5rem 1.2rem">نسبة التوفير: ' + pct + '%</span>' +
+      '</div>';
+  }
+
+  // Attach events
+  document.querySelectorAll('#calcForm input, #calcForm select').forEach(function(el){
+    el.addEventListener('input', calculate);
+    el.addEventListener('change', calculate);
+  });
+
+  // Initial calculation
+  calculate();
+
+  // ===== FAQ Accordion =====
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ===== Reveal on scroll =====
+  var els = document.querySelectorAll('.reveal-blur');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+      });
+    },{threshold:.08});
+    els.forEach(function(el){io.observe(el);});
+  }else{
+    els.forEach(function(el){el.classList.add('visible');});
+  }
+
+  // ===== Counters =====
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting && !e.target.dataset.done){
+        e.target.dataset.done = 1;
+        var t = parseInt(e.target.dataset.target);
+        var pre = e.target.dataset.prefix || '';
+        var suf = e.target.dataset.suffix || '';
+        var st = null;
+        var step = function(ts){
+          if(!st) st = ts;
+          var p = Math.min((ts - st) / 1800, 1);
+          e.target.textContent = pre + Math.floor(t * p) + suf;
+          if(p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        cio.unobserve(e.target);
+      }
+    });
+  },{threshold:.4});
+  document.querySelectorAll('[data-counter]').forEach(function(el){cio.observe(el);});
+
+  // ===== Scroll top =====
+  var st = document.querySelector('.scroll-top-btn');
+  window.addEventListener('scroll', function(){
+    if(st) st.classList.toggle('visible', window.scrollY > 500);
+  });
+  if(st) st.onclick = function(){window.scrollTo({top:0,behavior:'smooth'});};
+
+  // ===== Mobile menu =====
+  var mm = document.querySelector('.mobile-menu');
+  var ov = document.querySelector('.mobile-menu-overlay');
+  var mb = document.querySelector('.mobile-menu-btn');
+  var mc = document.querySelector('.mobile-menu-close');
+  function openM(){mm && mm.classList.add('open');ov && ov.classList.add('open');}
+  function closeM(){mm && mm.classList.remove('open');ov && ov.classList.remove('open');}
+  if(mb) mb.onclick = openM;
+  if(mc) mc.onclick = closeM;
+  if(ov) ov.onclick = closeM;
+
+  // ===== Cookie banner =====
+  var cb = document.querySelector('.cookie-banner');
+  if(cb && !localStorage.getItem('cookieConsent')){
+    setTimeout(function(){cb.classList.add('visible');}, 1500);
+  }
+  var ca = document.querySelector('.cookie-accept');
+  var cd = document.querySelector('.cookie-decline');
+  if(ca) ca.onclick = function(){localStorage.setItem('cookieConsent','1');cb.classList.remove('visible');};
+  if(cd) cd.onclick = function(){localStorage.setItem('cookieConsent','0');cb.classList.remove('visible');};
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

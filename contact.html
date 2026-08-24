@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="اتصل بنا - انترسوفت: تواصل مع فريقنا للحصول على استشارة مجانية أو لأي استفسار">
+  <title>اتصل بنا | ENTERSOFT - نحن هنا لمساعدتك</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body>
+
+  
+
+ <nav class="nav-fixed"><div class="nav-inner">
+  <a href="index.html" class="flex items-center gap-3">
+    <img src="https://fastupload.live/do.php?img=2993" alt="ENTERSOFT" class="logo-img" onerror="this.style.display='none'">
+    <span><span class="block font-bold text-lg">انترسوفت للحلول المتكاملة ودعم ريادة الاعمال </span><span class="text-xs text-neutral-500"> ش ذ م م</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">الرئيسية</a><a href="services.html" class="nav-link">الخدمات</a><a href="about.html" class="nav-link">من نحن</a><a href="calculator.html" class="nav-link">أداة التوفير</a><a href="pricing.html" class="nav-link">الأسعار</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="contact.html" class="nav-link active">اتصل بنا</a>
+  </div>
+  <div class="flex items-center gap-3">
+    <a href="contact.html" class="btn btn-gradient-emerald btn-md hidden sm:inline-flex">استشارة مجانية</a>
+    <button class="mobile-menu-btn" aria-label="القائمة">☰</button>
+  </div>
+</div></nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="flex items-center justify-between mb-8"><span class="font-bold text-lg">القائمة</span><button class="mobile-menu-close font-bold">✕</button></div>
+  <div class="flex flex-col gap-4">
+    <a href="index.html" class="nav-link">الرئيسية</a><a href="services.html" class="nav-link">الخدمات</a><a href="about.html" class="nav-link">من نحن</a><a href="calculator.html" class="nav-link">أداة التوفير</a><a href="pricing.html" class="nav-link">الأسعار</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="contact.html" class="nav-link active">اتصل بنا</a>
+    <a href="contact.html" class="btn btn-gradient-emerald btn-lg mt-4">استشارة مجانية</a>
+  </div>
+</div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu">
+    <div class="flex items-center justify-between mb-8">
+      <div class="font-bold text-lg">القائمة</div>
+      <button class="mobile-menu-close" aria-label="إغلاق">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col gap-4">
+      <a href="index.html" class="nav-link">الرئيسية</a>
+      <a href="services.html" class="nav-link">الخدمات</a>
+      <a href="about.html" class="nav-link">من نحن</a>
+      <a href="calculator.html" class="nav-link">أداة التوفير</a>
+      <a href="pricing.html" class="nav-link">الأسعار</a>
+      <a href="faq.html" class="nav-link">الأسئلة الشائعة</a>
+      <a href="contact.html" class="nav-link">اتصل بنا</a>
+      <a href="contact.html" class="btn btn-gradient-emerald btn-lg mt-4">استشارة مجانية</a>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <div class="grid-background absolute inset-0 animate-grid-move"></div>
+      <div class="bg-gradient-radial absolute inset-0"></div>
+    </div>
+    
+    <div class="container relative z-10">
+      <div class="breadcrumb reveal-blur">
+        <a href="index.html">الرئيسية</a>
+        <span class="breadcrumb-separator">/</span>
+        <span>اتصل بنا</span>
+      </div>
+      
+      <h1 class="page-header-title reveal-blur transition-delay-100">
+        نحن هنا <span class="text-gradient-emerald">لمساعدتك</span>
+      </h1>
+      
+      <p class="page-header-subtitle reveal-blur transition-delay-200">
+        سواء كنت مستعداً للبدء أو لديك استفسار، فريقنا جاهز للإجابة. احجز استشارتك المجانية الآن.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 px-6 lg:px-12">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Contact Form -->
+        <div class="reveal-blur">
+          <div class="glass-card p-8">
+            <h2 class="text-2xl font-bold mb-6">أرسل لنا رسالة</h2>
+            
+            <form id="contactForm" data-validate class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium mb-2">الاسم الكامل *</label>
+                  <input type="text" name="name" required class="input-field" placeholder="أحمد محمد">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2">رقم الهاتف *</label>
+                  <input type="tel" name="phone" required class="input-field" placeholder="+20 1XX XXX XXXX">
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium mb-2">البريد الإلكتروني *</label>
+                <input type="email" name="email" required class="input-field" placeholder="your@email.com">
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium mb-2">نوع الخدمة المطلوبة</label>
+                <select name="service" class="input-field">
+                  <option value="">اختر الخدمة</option>
+                  <option value="company-formation">تأسيس شركة</option>
+                  <option value="virtual-office">مكتب افتراضي</option>
+                  <option value="accounting">خدمات محاسبية</option>
+                  <option value="tax">استشارات ضريبية</option>
+                  <option value="marketing">تسويق رقمي</option>
+                  <option value="digital">برمجة وتطوير</option>
+                  <option value="other">أخرى</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium mb-2">رسالتك *</label>
+                <textarea name="message" required class="textarea-field" placeholder="اكتب رسالتك هنا..." rows="5"></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-gradient-emerald btn-lg w-full">
+                إرسال الرسالة
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+              </button>
+              
+              <div class="form-success hidden p-4 rounded-xl bg-emerald/10 border border-emerald/20 text-emerald text-center">
+                ✓ تم إرسال رسالتك بنجاح! سنتواصل معك خلال 24 ساعة.
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="reveal-blur transition-delay-200">
+          <div class="space-y-6">
+            
+            <!-- Quick Contact -->
+            <div class="glass-card p-6">
+              <h3 class="text-xl font-bold mb-4">تواصل سريع</h3>
+              <div class="space-y-4">
+                <a href="tel:+201159844677" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                  <div class="w-12 h-12 rounded-lg bg-emerald/10 border border-emerald/20 flex items-center justify-center">
+                    <span class="text-2xl">📞</span>
+                  </div>
+                  <div>
+                    <div class="text-sm text-neutral-400">اتصل بنا</div>
+                    <div class="font-semibold">+20 115 984 4677</div>
+                  </div>
+                </a>
+                
+                <a href="https://wa.me/201159844677" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                  <div class="w-12 h-12 rounded-lg bg-emerald/10 border border-emerald/20 flex items-center justify-center">
+                    <span class="text-2xl">💬</span>
+                  </div>
+                  <div>
+                    <div class="text-sm text-neutral-400">واتساب</div>
+                    <div class="font-semibold">+20 115 984 4677</div>
+                  </div>
+                </a>
+                
+                <a href="mailto:info@entersoft.tech" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                  <div class="w-12 h-12 rounded-lg bg-emerald/10 border border-emerald/20 flex items-center justify-center">
+                    <span class="text-2xl">✉️</span>
+                  </div>
+                  <div>
+                    <div class="text-sm text-neutral-400">البريد الإلكتروني</div>
+                    <div class="font-semibold">info@entersoft.tech</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Office Location -->
+            <div class="glass-card p-6">
+              <h3 class="text-xl font-bold mb-4">مقرنا الرئيسي</h3>
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-12 h-12 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">📍</span>
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">العنوان</div>
+                  <div class="text-neutral-400">107 شارع التحرير، أول الإسماعيلية<br/>محافظة الإسماعيلية، مصر</div>
+                </div>
+              </div>
+              
+              <div class="relative rounded-xl overflow-hidden h-64 bg-white/5">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.123456789!2d32.2654!3d30.5965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM1JzQ3LjQiTiAzMsKwMTUnNTUuNCJF!5e0!3m2!1sar!2seg!4v1234567890" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0; filter: grayscale(100%) invert(90%);" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+            
+            <!-- Working Hours -->
+            <div class="glass-card p-6">
+              <h3 class="text-xl font-bold mb-4">ساعات العمل</h3>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between p-3 rounded-lg bg-white/5">
+                  <span class="text-neutral-400">السبت - الخميس</span>
+                  <span class="font-semibold">9:00 ص - 5:00 م</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg bg-white/5">
+                  <span class="text-neutral-400">الجمعة</span>
+                  <span class="font-semibold text-red-400">مغلق</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-lg bg-emerald/10 border border-emerald/20">
+                  <span class="text-emerald">الدعم الطارئ</span>
+                  <span class="font-semibold text-emerald">24/7</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Consultation -->
+  <section class="py-24 px-6 lg:px-12 relative">
+    <div class="absolute inset-0 bg-gradient-radial pointer-events-none"></div>
+    
+    <div class="container relative z-10">
+      <div class="section-header reveal-blur">
+        <div class="section-number">احجز استشارتك</div>
+        <h2 class="section-title">استشارة مجانية <span class="text-gradient-emerald">100%</span></h2>
+        <p class="section-subtitle">
+          احجز موعداً مع خبرائنا لمناقشة احتياجاتك والحصول على توصيات مخصصة لنشاطك
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="glass-card p-8 reveal-blur">
+          <form id="consultationForm" data-validate class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-2">الاسم *</label>
+                <input type="text" name="name" required class="input-field">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">رقم الهاتف *</label>
+                <input type="tel" name="phone" required class="input-field">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium mb-2">نوع النشاط</label>
+              <select name="activity" class="input-field">
+                <option value="">اختر نوع النشاط</option>
+                <option value="commercial">تجاري</option>
+                <option value="industrial">صناعي</option>
+                <option value="service">خدمي</option>
+                <option value="touristic">سياحي</option>
+                <option value="medical">طبي</option>
+                <option value="educational">تعليمي</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium mb-2">الموعد المفضل</label>
+              <input type="datetime-local" name="appointment" class="input-field">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium mb-2">ملاحظات إضافية</label>
+              <textarea name="notes" class="textarea-field" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-gradient-emerald btn-lg w-full">
+              احجز الاستشارة المجانية
+            </button>
+            
+            <div class="form-success hidden p-4 rounded-xl bg-emerald/10 border border-emerald/20 text-emerald text-center">
+              ✓ تم حجز استشارتك! سنتواصل معك لتأكيد الموعد.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald/20">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 21V7L12 2L21 7V21H15V13H9V21H3Z" fill="currentColor" class="text-emerald"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-lg">ENTERSOFT</div>
+            <div class="text-xs text-neutral-500">انترسوفت</div>
+          </div>
+        </div>
+        <p class="text-neutral-400 text-sm leading-relaxed">
+          بيئة العمل المثالية لنمو وتأسيس الشركات في مصر. نجمع لك كل ما تحتاجه للنجاح تحت سقف واحد، مع خدمة متميزة للمنطقة الاقتصادية لقناة السويس.
+        </p>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">التنقل السريع</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">الرئيسية</a></li>
+          <li><a href="services.html" class="footer-link">الخدمات والحلول</a></li>
+          <li><a href="pricing.html" class="footer-link">خطط الأسعار</a></li>
+          <li><a href="faq.html" class="footer-link">مركز المساعدة</a></li>
+          <li><a href="about.html" class="footer-link">من نحن</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">الخدمات الأساسية</h4>
+        <ul class="footer-links">
+          <li><a href="service-company-formation.html" class="footer-link">تأسيس الشركات قانونياً</a></li>
+          <li><a href="service-virtual-office.html" class="footer-link">المقرات الافتراضية</a></li>
+          <li><a href="service-tax-accounting.html" class="footer-link">الخدمات المحاسبية</a></li>
+          <li><a href="service-marketing.html" class="footer-link">التسويق الرقمي</a></li>
+          <li><a href="service-digital.html" class="footer-link">البرمجة والتحول الرقمي</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">المقر والتواصل</h4>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>107 شارع التحرير، أول الإسماعيلية</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <a href="tel:+201159844677" class="footer-link">+20 115 984 4677</a>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <a href="tel:+201159866998" class="footer-link">+20 115 986 6998</a>
+        </div>
+        <div class="footer-contact-item">
+          <span>✉️</span>
+          <a href="mailto:info@entersoft.tech" class="footer-link">info@entersoft.tech</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        جميع الحقوق محفوظة © 2026 ENTERSOFT L.L.C. | صنع بإتقان في الإسماعيلية
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" aria-label="Facebook">📘</a>
+        <a href="#" class="footer-social" aria-label="Instagram">📷</a>
+        <a href="#" class="footer-social" aria-label="LinkedIn">💼</a>
+        <a href="#" class="footer-social" aria-label="Twitter">🐦</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/201159844677" class="whatsapp-btn" aria-label="WhatsApp">💬</a>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top-btn" aria-label="العودة للأعلى">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15L12 9L6 15"/>
+    </svg>
+  </button>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-content">
+      <p class="cookie-text">
+        نستخدم ملفات تعريف الارتباط لتحسين تجربتك وقياس أداء الموقع. باستمرارك في التصفح فأنت توافق على سياسة الخصوصية.
+      </p>
+      <div class="cookie-buttons">
+        <button class="btn btn-gradient-emerald btn-sm cookie-accept">موافق</button>
+        <button class="btn btn-secondary btn-sm cookie-decline">لاحقاً</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

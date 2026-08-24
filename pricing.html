@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطط الأسعار | ENTERSOFT</title>
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav class="nav-fixed"><div class="nav-inner">
+  <a href="index.html" class="flex items-center gap-3">
+    <img src="https://fastupload.live/do.php?img=2993" alt="ENTERSOFT" class="logo-img" onerror="this.style.display='none'">
+    <span><span class="block font-bold text-lg">انترسوفت للحلول المتكاملة ودعم ريادة الاعمال </span><span class="text-xs text-neutral-500"> ش ذ م م</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">الرئيسية</a><a href="services.html" class="nav-link">الخدمات</a><a href="about.html" class="nav-link">من نحن</a><a href="calculator.html" class="nav-link">أداة التوفير</a><a href="pricing.html" class="nav-link active">الأسعار</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="contact.html" class="nav-link">اتصل بنا</a>
+  </div>
+  <div class="flex items-center gap-3">
+    <a href="contact.html" class="btn btn-gradient-emerald btn-md hidden sm:inline-flex">استشارة مجانية</a>
+    <button class="mobile-menu-btn" aria-label="القائمة">☰</button>
+  </div>
+</div></nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="flex items-center justify-between mb-8"><span class="font-bold text-lg">القائمة</span><button class="mobile-menu-close font-bold">✕</button></div>
+  <div class="flex flex-col gap-4">
+    <a href="index.html" class="nav-link">الرئيسية</a><a href="services.html" class="nav-link">الخدمات</a><a href="about.html" class="nav-link">من نحن</a><a href="calculator.html" class="nav-link">أداة التوفير</a><a href="pricing.html" class="nav-link active">الأسعار</a><a href="faq.html" class="nav-link">الأسئلة الشائعة</a><a href="contact.html" class="nav-link">اتصل بنا</a>
+    <a href="contact.html" class="btn btn-gradient-emerald btn-lg mt-4">استشارة مجانية</a>
+  </div>
+</div>
+<section class="page-header">
+  <div class="absolute inset-0 pointer-events-none"><div class="grid-background absolute inset-0 animate-grid-move"></div><div class="bg-gradient-radial absolute inset-0"></div></div>
+  <div class="container relative z-10">
+    <div class="breadcrumb reveal-blur"><a href="index.html">الرئيسية</a><span>/</span><span>خطط الأسعار</span></div>
+    <h1 class="page-header-title reveal-blur transition-delay-100">باقات <span class="text-gradient-brown">مرنة</span> تناسبك</h1>
+    <p class="page-header-subtitle reveal-blur transition-delay-200">اختر الباقة المناسبة لحجم نشاطك وميزانيتك. جميع الباقات تشمل الدعم الفني والقانوني المستمر.</p>
+  </div>
+</section>
+
+<section class="py-8">
+  <div class="price-toggle reveal-blur">
+    <span class="toggle-label active" id="lblMonthly">شهري</span>
+    <button class="price-switch" id="priceSwitch" aria-label="تبديل الفترة"><span class="dot"></span></button>
+    <span class="toggle-label" id="lblYearly">سنوي <span class="save-chip">وفر 20%</span></span>
+  </div>
+</section>
+
+<section class="py-16 px-6 lg:px-12">
+  <div class="container"><div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="pricing-card reveal-blur">
+      <div class="pricing-name">الباقة المبدئية</div><div class="pricing-desc">مثالية للشركات الناشئة والأفراد</div>
+      <div class="pricing-price"><span class="pricing-amount" data-monthly="3500" data-yearly="2800">3,500</span><span class="pricing-currency">جنيه</span><span class="pricing-period">/شهرياً</span></div>
+      <ul class="pricing-features">
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>عنوان قانوني موثق</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>استقبال المعاينات الرسمية</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>إمساك دفاتر بسيط</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>إقرار ضريبي سنوي</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>قاعة اجتماعات (4 ساعات/شهر)</li>
+      </ul>
+      <a href="contact.html" class="btn btn-secondary btn-lg w-full">اختر هذه الباقة</a>
+    </div>
+    <div class="pricing-card featured reveal-blur transition-delay-100">
+      <div class="pricing-name">الباقة الاحترافية</div><div class="pricing-desc">الأكثر شعبية للشركات المتوسطة</div>
+      <div class="pricing-price"><span class="pricing-amount" data-monthly="7500" data-yearly="6000">7,500</span><span class="pricing-currency">جنيه</span><span class="pricing-period">/شهرياً</span></div>
+      <ul class="pricing-features">
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>كل مزايا الباقة المبدئية</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>إمساك دفاتر متكامل</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>إقرارات ضريبية شهرية</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>تمثيل قانوني أمام الضرائب</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>تقارير مالية شهرية</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>قاعة اجتماعات (12 ساعة/شهر)</li>
+      </ul>
+      <a href="contact.html" class="btn btn-gradient-emerald btn-lg w-full">اختر هذه الباقة</a>
+    </div>
+    <div class="pricing-card reveal-blur transition-delay-200">
+      <div class="pricing-name">باقة الشركات</div><div class="pricing-desc">للشركات الكبيرة والمؤسسات</div>
+      <div class="pricing-price"><span class="pricing-amount" data-monthly="18000" data-yearly="14400">18,000</span><span class="pricing-currency">جنيه</span><span class="pricing-period">/شهرياً</span></div>
+      <ul class="pricing-features">
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>كل مزايا الباقة الاحترافية</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>مدير حساب مخصص</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>نظام ERP متكامل</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>تسويق رقمي شامل</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>دعم فني 24/7</li>
+        <li class="pricing-feature"><span class="pricing-feature-icon">✓</span>قاعة اجتماعات غير محدودة</li>
+      </ul>
+      <a href="contact.html" class="btn btn-secondary btn-lg w-full">اختر هذه الباقة</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="py-24 px-6 lg:px-12">
+  <div class="container"><div class="glass-card p-12 text-center reveal-blur">
+    <h2 class="text-4xl font-bold mb-4">غير متأكد أي باقة تناسبك؟</h2>
+    <p class="text-xl text-neutral-400 mb-8">احجز استشارة مجانية مع خبرائنا، وسنساعدك في اختيار الباقة المثالية.</p>
+    <a href="contact.html" class="btn btn-gradient-emerald btn-xl">احجز استشارتك المجانية</a>
+  </div></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom" style="margin:0;border:none;padding:0"><div class="footer-copyright">جميع الحقوق محفوظة © 2026 ENTERSOFT L.L.C.</div><div class="footer-socials"><a href="#" class="footer-social">فيسبوك</a><a href="#" class="footer-social">انستجرام</a><a href="#" class="footer-social">لينكدإن</a><a href="#" class="footer-social">تويتر</a></div></div>
+</footer>
+<a href="https://wa.me/201159844677" class="whatsapp-btn">واتساب</a>
+<button class="scroll-top-btn">↑</button>
+
+<script>
+(function(){
+  var yearly=false,sw=document.getElementById('priceSwitch'),lm=document.getElementById('lblMonthly'),ly=document.getElementById('lblYearly');
+  function render(){
+    sw.classList.toggle('yearly',yearly);
+    lm.classList.toggle('active',!yearly);ly.classList.toggle('active',yearly);
+    document.querySelectorAll('.pricing-amount').forEach(function(a){a.textContent=parseInt(yearly?a.dataset.yearly:a.dataset.monthly).toLocaleString('en-US');});
+    document.querySelectorAll('.pricing-period').forEach(function(p){p.textContent=yearly?'/شهرياً (فوترة سنوية)':'/شهرياً';});
+  }
+  sw.onclick=function(){yearly=!yearly;render();};
+  lm.onclick=function(){yearly=false;render();};
+  ly.onclick=function(){yearly=true;render();};
+  render();
+  var st=document.querySelector('.scroll-top-btn');
+  window.addEventListener('scroll',function(){st.classList.toggle('visible',window.scrollY>500)});
+  st.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+  var mm=document.querySelector('.mobile-menu'),ov=document.querySelector('.mobile-menu-overlay');
+  document.querySelector('.mobile-menu-btn').onclick=function(){mm.classList.add('open');ov.classList.add('open')};
+  document.querySelector('.mobile-menu-close').onclick=ov.onclick=function(){mm.classList.remove('open');ov.classList.remove('open')};
+  var els=document.querySelectorAll('.reveal-blur');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.08});els.forEach(function(el){io.observe(el);});}
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
